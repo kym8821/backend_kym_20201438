@@ -21,7 +21,7 @@ function friendRecommendations(network, user) {
   // stack : 깊이 우선 탐색을 할 때 사용할 자료구조
   stack = [];
   // ans : 추천 친구만을 담을 자료구조
-  ans = {};
+  ans = [];
   // 자기 자신(user)과 추천친구를 visit에 추가
   visit[user] = true;
   for (let i = 0; i < network[user].length; i++) {
