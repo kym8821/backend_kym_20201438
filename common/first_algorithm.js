@@ -1,20 +1,3 @@
-// const network = {
-//   Alice: ["Bob", "Charlie"],
-//   Bob: ["Alice", "David"],
-//   Charlie: ["Alice", "Eve"],
-//   David: ["Bob"],
-//   Eve: ["Charlie"],
-// };
-
-const network = {
-  Alice: ["Bob", "Charlie"],
-  Bob: ["Alice", "David"],
-  Charlie: ["Alice", "Eve", "Bob"],
-  David: ["Bob"],
-  Eve: ["Charlie", "Frank"],
-  Frank: ["Eve"],
-};
-
 function friendRecommendations(network, user) {
   // 방문 노드 표시. 친구이지만 이미 추천친구 목록에 추가했거나 직접 친구인 사용자들이 들어감
   visit = {};
@@ -44,5 +27,3 @@ function friendRecommendations(network, user) {
   }
   return ans;
 }
-
-console.log(friendRecommendations(network, "Alice"));
