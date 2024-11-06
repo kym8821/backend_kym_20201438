@@ -1,7 +1,7 @@
-import connection from '../config/connection.js';
-import projectRepository from '../repository/projectRepository.js';
-import { transactionManager } from '../util/transactionManager.js';
-import { ProjectResponseDto } from '../dto/project/projectResponseDto.js';
+import connection from "../config/connection.js";
+import projectRepository from "../repository/projectRepository.js";
+import { transactionManager } from "../util/transactionManager.js";
+import { ProjectResponseDto } from "../dto/project/projectResponseDto.js";
 
 const repository = projectRepository;
 // not transaction : find all project
@@ -13,8 +13,7 @@ async function findAll() {
 // not transaction : find project by id
 async function findById(id) {
   let project = await repository.findById(connection, id);
-  if (!project) return undefined;
-  return project[0];
+  return project[0] ? project[0] : null;
 }
 // transaction : save project
 async function saveProject(saveDto) {
