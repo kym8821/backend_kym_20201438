@@ -1,6 +1,6 @@
-import { checkDate } from "../util/checkDate";
-import { isTaskPriority } from "../util/enum/taskPriority";
-import { isTaskStatus } from "../util/enum/taskStatus";
+import { checkDate } from '../util/checkDate';
+import { isTaskPriority } from '../util/enum/taskPriority';
+import { isTaskStatus } from '../util/enum/taskStatus';
 
 export class Task {
   constructor(pjId, id, title, description, priority, dueDate, status) {
@@ -15,15 +15,9 @@ export class Task {
 }
 
 export function isTask(task) {
-  if (
-    typeof task.pjId !== "number" ||
-    typeof task.id !== "number" ||
-    typeof task.title !== "string" ||
-    typeof task.description !== "string"
-  )
-    return false;
-  if (typeof task.dueDate !== "string" || !checkDate(task.dueDate)) return false;
-  if (typeof task.priority !== "string" || isTaskPriority(task.priority)) return false;
-  if (typeof task.status !== "string" || !isTaskStatus(task.status)) return false;
+  if (typeof task.pjId !== 'number' || typeof task.id !== 'number' || typeof task.title !== 'string' || typeof task.description !== 'string') return false;
+  if (typeof task.dueDate !== 'string' || !checkDate(task.dueDate)) return false;
+  if (typeof task.priority !== 'string' || isTaskPriority(task.priority)) return false;
+  if (typeof task.status !== 'string' || !isTaskStatus(task.status)) return false;
   return true;
 }
