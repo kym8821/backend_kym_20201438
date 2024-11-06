@@ -18,5 +18,6 @@ function checkEmpty(value) {
 
 function isEmpty(value) {
   ret = checkEmpty(value);
+  console.log(ret);
   return ret;
 }
